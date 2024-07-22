@@ -10,6 +10,7 @@ import * as Yup from 'yup';
 function Validation(props) {
     const [state, setState] = React.useState({
         traveling: true,
+        playing:true,
         cooking: false,
         dance: false,
         reading: false,
@@ -26,7 +27,7 @@ function Validation(props) {
         formik.setFieldValue('checkboxes', selectedHobbies);
     };
 
-    const { traveling, cooking, dance, reading } = state;
+    const { traveling,playing, cooking, dance, reading } = state;
 
     const validationSchema = Yup.object().shape({
         firstname: Yup.string().required("Enter firstname").matches(/^[A-Za-z ]*$/, 'Please enter valid name'),
@@ -261,6 +262,16 @@ function Validation(props) {
                                     />
                                 }
                                 label="Traveling"
+                            />
+                             <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={playing}
+                                        onChange={handleCheckChange}
+                                        name="playing"
+                                    />
+                                }
+                                label="playing"
                             />
                         </FormGroup>
                         {errors.checkboxes && (
