@@ -63,7 +63,8 @@ function Validation(props) {
         checkboxes: Yup.array()
             .min(3, 'Please select at least 3 hobbies.'),
         contact: Yup.string()
-            .required('contact number is required').matches(/^\d{10}$/,"please enter 10 digit number"),
+            .required('contact number is required').matches(/^\d{10}$/, "please enter 10 digit number"),
+            number: Yup.string(),
         password: Yup.string()
             .required('password is required'),
         gender: Yup.string()
@@ -79,6 +80,7 @@ function Validation(props) {
             gender: '',
             age: '',
             image: "",
+            number: "",
             message: "",
             firstname: "",
             lastname: "",
@@ -131,6 +133,17 @@ function Validation(props) {
                         {errors.lastname && (
                             <div style={{ color: 'red', marginTop: '8px' }}>{errors.lastname}</div>
                         )}
+
+                        <TextField
+                            id="standard-basic"
+                            variant="standard"
+                            type="number"
+                            name="number"
+                            value={values.number}
+                            onChange={handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+
                     </FormControl>
                 </Box>
                 <Box sx={{ m: 3 }}>
