@@ -10,7 +10,7 @@ import * as Yup from 'yup';
 function Validation(props) {
     const [state, setState] = React.useState({
         traveling: true,
-        playing:true,
+        playing: true,
         cooking: false,
         dance: false,
         reading: false,
@@ -27,7 +27,7 @@ function Validation(props) {
         formik.setFieldValue('checkboxes', selectedHobbies);
     };
 
-    const { traveling,playing, cooking, dance, reading } = state;
+    const { traveling, playing, cooking, dance, reading } = state;
 
     const validationSchema = Yup.object().shape({
         firstname: Yup.string().required("Enter firstname").matches(/^[A-Za-z ]*$/, 'Please enter valid name'),
@@ -65,7 +65,7 @@ function Validation(props) {
             .min(3, 'Please select at least 3 hobbies.'),
         contact: Yup.string()
             .required('contact number is required').matches(/^\d{10}$/, "please enter 10 digit number"),
-            number: Yup.string(),
+        number: Yup.string(),
         password: Yup.string()
             .required('password is required'),
         gender: Yup.string()
@@ -121,7 +121,7 @@ function Validation(props) {
                 </Box>
                 <Box sx={{ m: 3 }}>
                     <FormControl component="fieldset">
-                        <FormLabel component="legend">Lastname</FormLabel>
+                        <FormLabel component="legend">Last name</FormLabel>
                         <TextField
                             id="standard-basic"
                             variant="standard"
@@ -136,6 +136,17 @@ function Validation(props) {
                         )}
 
                        
+                        <FormLabel component="legend" style={{ marginTop: '20px' }}>Number</FormLabel>
+                        <TextField
+                            id="standard-basic"
+                            variant="standard"
+                            type="number"
+                            name="number"
+                            value={values.number}
+                            onChange={handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+
                     </FormControl>
                 </Box>
                 <Box sx={{ m: 3 }}>
@@ -267,7 +278,7 @@ function Validation(props) {
                                 }
                                 label="Traveling"
                             />
-                             <FormControlLabel
+                            <FormControlLabel
                                 control={
                                     <Checkbox
                                         checked={playing}
