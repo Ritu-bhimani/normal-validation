@@ -136,18 +136,7 @@ function Validation(props) {
                         )}
 
                        
-                        <FormLabel component="legend" style={{ marginTop: '20px' }}>Number</FormLabel>
-                        <TextField
-                            id="standard-basic"
-                            variant="standard"
-                            type="number"
-                            name="number"
-                            value={values.number}
-                            onChange={handleChange}
-                            onBlur={formik.handleBlur}
-                        />
-
-                    </FormControl>
+                                         </FormControl>
                 </Box>
                 <Box sx={{ m: 3 }}>
                     <FormControl component="fieldset">
