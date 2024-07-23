@@ -135,16 +135,7 @@ function Validation(props) {
                             <div style={{ color: 'red', marginTop: '8px' }}>{errors.lastname}</div>
                         )}
 
-                        <TextField
-                            id="standard-basic"
-                            variant="standard"
-                            type="number"
-                            name="number"
-                            value={values.number}
-                            onChange={handleChange}
-                            onBlur={formik.handleBlur}
-                        />
-
+                       
                     </FormControl>
                 </Box>
                 <Box sx={{ m: 3 }}>
