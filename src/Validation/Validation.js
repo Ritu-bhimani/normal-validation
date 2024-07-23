@@ -134,9 +134,7 @@ function Validation(props) {
                         {errors.lastname && (
                             <div style={{ color: 'red', marginTop: '8px' }}>{errors.lastname}</div>
                         )}
-
-                       
-                                         </FormControl>
+                    </FormControl>
                 </Box>
                 <Box sx={{ m: 3 }}>
                     <FormControl component="fieldset">
